@@ -17,7 +17,7 @@ The Stack Overflow Datasets (SOD) and Stack Overflow Duplicity Dataset (SODD) pr
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. http://creativecommons.org/licenses/by-nc-sa/4.0/
 
 ## How should I cite the MQDD? 
-For now, please cite [the Arxiv paper](https://arxiv.org/abs/xxx:
+For now, please cite [the Arxiv paper](https://arxiv.org/abs/xxx):
 ```
 @article{pasekj2022mqdd,
       title={MQDD -- Pre-training of Multimodal Question Duplicity Detection for Software Engineering Domain}, 
