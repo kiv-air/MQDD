@@ -1,7 +1,9 @@
 # MQDD - Multimodal Question Duplicity Detection
 
 This repository publishes trained models and other supporting materials for the paper 
-[MQDD – Pre-training of Multimodal Question Duplicity Detection for Software Engineering Domain](https://arxiv.org/abs/xxx). For more information, see the paper
+[MQDD – Pre-training of Multimodal Question Duplicity Detection for Software Engineering Domain](https://arxiv.org/abs/xxx). For more information, see the paper.
+
+The Stack Overflow Datasets (SOD) and Stack Overflow Duplicity Dataset (SODD) presented in the paper can be obtained from our [Stack Overflow Dataset repository](https://github.com/kiv-air/StackOverflowDataset).
 
 
 ## Available Models
