@@ -28,10 +28,32 @@ In addition to the pre-trained MQDD, we also release its fine-tuned version on d
 
 ![Two-tower model architecture](img/architecture.png)
 
-## How to Use the MQDD?
+A self-standing encoder without a duplicate detection head can be obtained from our [HuggingFace repository](https://huggingface.co/UWB-AIR/MQDD-duplicates). Such a model can be used for building search systems based, for example, on [Faiss](https://github.com/facebookresearch/faiss) library  model can be then loaded using the following source code:
+
+```Python
+from transformers import AutoTokenizer, AutoModel
+
+tokenizer = AutoTokenizer.from_pretrained("UWB-AIR/MQDD-duplicates")
+model = AutoModel.from_pretrained("UWB-AIR/MQDD-duplicates")
+```
+
+A checkpoint of a full two-tower model can than be obtained from our [GoogleDrive folder](https://drive.google.com/drive/folders/1CYiqF2GJ2fSQzx_oM4-X_IhpObi4af5Q?usp=sharing). To load the model, one needs to use the model's implementation from `models/MQDD_model.py` in our repository. To construct the model and load it's checkpoint, use the following source code:
+
+```Python
+from MQDD_model import ClsHeadModelMQDD
+
+model = ClsHeadModelMQDD("UWB-AIR/MQDD-duplicates")
+ckpt = torch.load("model.py",  map_location="cpu")
+model.load_state_dict(ckpt["model_state"])
+```
+
+### 3) Fine-tuned CodeBERT models
+In addition to our MQDD models, we release fine-tuned [CodeBERT](https://github.com/microsoft/CodeBERT) models for both code search and duplicate detection task. 
+
+TBD...
 
 ## Downstream Tasks Fine-tuning Results
-
+TBD...
 
 ## Licence
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. http://creativecommons.org/licenses/by-nc-sa/4.0/
