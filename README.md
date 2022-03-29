@@ -26,6 +26,8 @@ Besides, our model is also available at our [GoogleDrive folder](https://drive.g
 
 In addition to the pre-trained MQDD, we also release its fine-tuned version on duplicate detection task. The model's architectture follows the architecture of a two-tower model as depicted in the figure below:
 
+![Two-tower model architecture](img/architecture.png)
+
 ## How to Use the MQDD?
 
 ## Downstream Tasks Fine-tuning Results
