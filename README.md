@@ -43,17 +43,40 @@ A checkpoint of a full two-tower model can than be obtained from our [GoogleDriv
 from MQDD_model import ClsHeadModelMQDD
 
 model = ClsHeadModelMQDD("UWB-AIR/MQDD-duplicates")
-ckpt = torch.load("model.py",  map_location="cpu")
+ckpt = torch.load("model.pt",  map_location="cpu")
 model.load_state_dict(ckpt["model_state"])
 ```
 
-### 3) Fine-tuned CodeBERT models
-In addition to our MQDD models, we release fine-tuned [CodeBERT](https://github.com/microsoft/CodeBERT) models for both code search and duplicate detection task. 
+### 3) Fine-tuned MQDD model (code search)
 
-TBD...
+Besides our MQDD model for duplicates, we release the checkpoints of our MQDD model fine-tuned on the code search task. The model architecture employs the [AutoModelForSequenceClassification](https://huggingface.co/docs/transformers/model_doc/auto#transformers.AutoModelForSequenceClassification) from the `transformers` library. The checkpoints for all the programming languages are available in our [GoogleDrive folder](https://drive.google.com/drive/folders/1vdPN_W4FnkLSEAk0ldpmY36KCpBF_Nuz?usp=sharing). To load the model, use the following source code:
 
-## Downstream Tasks Fine-tuning Results
-TBD...
+```Python
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+tokenizer = AutoTokenizer.from_pretrained("UWB-AIR/MQDD-pretrained")
+model = AutoModelForSequenceClassification.from_pretrained("UWB-AIR/MQDD-pretrained")
+
+ckpt = torch.load("model.pt",  map_location="cpu")
+model.load_state_dict(ckpt["model_state"])
+```
+
+### 4) Fine-tuned CodeBERT models
+In addition to our MQDD models, we release fine-tuned [CodeBERT](https://github.com/microsoft/CodeBERT) models for both code search and duplicate detection task. For detailed instruction see the subsequent sections.
+
+#### Duplicates
+
+Checkpoints of the CodeBERT fine-tuned for the duplicity detection tasks can be downloaded from our [GoogleDrive folder](https://drive.google.com/drive/folders/1kN9EuEIFwX-U4CUOqg0EWKbUYDSVUHDE?usp=sharing). THe model can then be constructed and restored using the following source code:
+
+```Python
+from CodeBERT_model import ClsHeadModelCodeBERT
+
+model = ClsHeadModelCodeBERT()
+ckpt = torch.load("model.pt",  map_location="cpu")
+model.load_state_dict(ckpt["model_state"])
+```
+
+#### Code Search
 
 ## Licence
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. http://creativecommons.org/licenses/by-nc-sa/4.0/
