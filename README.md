@@ -26,7 +26,7 @@ Besides, our model is also available at our [GoogleDrive folder](https://drive.g
 
 In addition to the pre-trained MQDD, we also release its fine-tuned version on duplicate detection task. The model's architectture follows the architecture of a two-tower model as depicted in the figure below:
 
-![Two-tower model architecture](img/architecture.png)
+<img src="img/architecture.png" width="700">
 
 A self-standing encoder without a duplicate detection head can be obtained from our [HuggingFace repository](https://huggingface.co/UWB-AIR/MQDD-duplicates). Such a model can be used for building search systems based, for example, on [Faiss](https://github.com/facebookresearch/faiss) library  model can be then loaded using the following source code:
 
