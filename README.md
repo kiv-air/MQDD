@@ -78,6 +78,18 @@ model.load_state_dict(ckpt["model_state"])
 
 #### Code Search
 
+CodeBERT's checkpoints for all the programming languages included in the [CodeSearchNet](https://github.com/github/CodeSearchNet) can be acquired from [GoogleDrive](https://drive.google.com/drive/folders/1dzsxoxHCN4ecBipwWDdcFBnb33jh1Ly_?usp=sharing). To load and construct the model, see the following snippet:
+
+```Python
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+tokenizer = AutoTokenizer.from_pretrained("micrososft/codebert-base")
+model = AutoModelForSequenceClassification.from_pretrained("micrososft/codebert-base")
+
+ckpt = torch.load("model.pt",  map_location="cpu")
+model.load_state_dict(ckpt["model_state"])
+```
+
 ## Licence
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. http://creativecommons.org/licenses/by-nc-sa/4.0/
 
