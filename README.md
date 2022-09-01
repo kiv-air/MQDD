@@ -90,6 +90,12 @@ ckpt = torch.load("model.pt",  map_location="cpu")
 model.load_state_dict(ckpt["model_state"])
 ```
 
+## Available scripts
+
+To encourage other researchers to follow up on our research, we publish a pre-training (`scripts/pretraining.py`) script as well as a script used to fine-tune duplicity detection models (`scripts/duplicates.py`). However, it shall be noted that those scripts will not probably work as is. This is due to the fact that they are tailored to our grid infrastructure used for trainig. In case of any problems, feel free to get in touch with us and we'll be happy to help with getting the code running on your specific infrastructure.
+
+Furthermore, we provide a separate implementation of a two-tower model for MQDD (`models/MQDD_model.py`) and CodeBERT (`models/CodeBERT_model.py`) that can be used to load a fine-tuned checkpoint and start using the model for duplicity detection.
+
 ## Licence
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. http://creativecommons.org/licenses/by-nc-sa/4.0/
 
